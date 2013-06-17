@@ -1,0 +1,148 @@
+@font-face {
+	font-family: 'costura';
+	src: url('../fonts/costura_regular-webfont.eot'); 
+	src: url('../fonts/costura_regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('../fonts/costura_regular-webfont.woff') format('woff'),
+	     url('../fonts/costura_regular-webfont.ttf')  format('truetype'), 
+	     url('../fonts/costura_regular-webfont.svg#svgFontName') format('svg');
+	}
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../fonts/OpenSans-Regular-webfont.eot'); 
+	src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+	     url('../fonts/OpenSans-Regular-webfont.ttf')  format('truetype'), 
+	     url('../fonts/OpenSans-Regular-webfont.svg#svgFontName') format('svg');
+	}
+
+
+body{
+	padding-top: 75px;
+	font-family: 'OpenSans', Arial, sans-serif;
+}
+
+h1 {
+	font-weight:normal;
+	font-family: 'costura', Arial, sans-serif;
+}
+h2 {
+	font-weight:normal;
+	padding-bottom: 20px;
+}
+h3 {
+	font-weight:normal;
+
+}
+
+
+.bigPad{
+	padding-top:75px;
+	padding-bottom: 100px;
+}
+
+.bgGray{
+	background-color: #D9D9D9;
+}
+
+.bgAqua{
+	background-color: #dbfafc;
+}
+
+.bgWhite{
+	background-color: #ffffff;
+}
+
+.container-fluid { /* no thanks on this padding */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-inner {
+	padding-top: 35px;
+}
+
+/* flatten styles */
+.navbar-inverse .navbar-inner {
+    background-color: #ffffff;
+    background-image: none;
+	border: none;
+	border-bottom: 1px dashed #D9D9D9;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+    color: #999999;
+    text-shadow: none;
+}
+
+.navbar-inner .brand, .navbar-inner .nav > li > a {
+    color: #666666;
+    text-shadow: none;
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    background-color: #ffffff;
+    color: #063A57;
+}
+
+.navbar-inverse .brand:hover, .navbar-inverse .nav > li > a:hover, .navbar-inverse .brand:focus, .navbar-inverse .nav > li > a:focus {
+    color: #999999;
+}
+
+.navbar-inverse .btn-navbar  {
+    background-color: #666;
+    background-image: none;
+    background-repeat: none;
+    border: none;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    background-color: #FFFFFF;
+    box-shadow: none;
+  
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    box-shadow: none;
+}
+
+.navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus, .navbar-inverse .btn-navbar:active{
+	background-color: #CCCC00;
+}
+
+
+.navbar .btn-navbar{
+	box-shadow: none;
+}
+
+.brand {
+	font-family: 'costura', Arial, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+a {
+    color: #666;
+}
+
+a:hover,a:active,a:focus{
+	color: #042838;
+}
+
+.rounded {
+	-webkit-border-radius: 15px; 
+	-moz-border-radius: 15px; 
+	border-radius: 15px;
+}
+
+.pad40{
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+
+.pad20{
+	padding:20px;
+}
+
