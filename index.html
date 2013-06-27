@@ -10,28 +10,8 @@
 <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-	      <div class="navbar-inner">
-	        <div class="container">
-	          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="brand" href="index.html">Simple Quilt Blocks</a>
-	          <div class="nav-collapse collapse">
-	            <ul class="nav">
-	              <li class="active"><a href="index.html">Home</a></li>
-	              <li><a href="ohioStar.html">Ohio Star</a></li>
-
-	            </ul>
-				<ul class="nav pull-right">
-					<li class=""><a href="http://tumblingblocks.net"><small>from tumblingblocks</small></a></li>
-				</ul>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
+	<div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+	      
 	</div>
 
 	    <div class="container-fluid text-center">
@@ -48,9 +28,14 @@
 				
 				<div class="span10 offset1 bgWhite rounded pad40" id="tuteMain">
 					
-					<div>
+					<div class="span6">
 						<canvas id="ohioStarCanvasMain" ></canvas><br />
 						<a href="ohioStar.html" class="btn">ohio star tutorial</a>
+					</div>
+					
+					<div class="span6">
+						<canvas id="churnDashCanvasMain" ></canvas><br />
+						<a href="churnDash.html" class="btn">churn dash tutorial</a>
 					</div>
 			      	
 				</div>
@@ -66,5 +51,16 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/blockTutorial.js"></script>
 <script type="text/javascript" src="json/ohioStar.js"></script>
+<script type="text/javascript" src="json/churnDash.js"></script>
+<script type="text/javascript">
+	
+	var blockArray = ["ohioStar","churnDash"];
+	var blockScaleArray = [50,45];
+	for (var i=0; i < blockArray.length; i++){
+		var curblock = new block(blockArray[i]); 
+		curblock.drawBlock(colorArray, blockScaleArray[i], blockArray[i] + "CanvasMain", false);
+	}	
+</script>
+
 </body>
 </html>

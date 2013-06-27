@@ -9,3 +9,12 @@
 <p>This project uses Twitter Bootstrap for page layout, with customized CSS for a brighter, flatter look.  It takes advantage of Bootstrap's responsive functionality and looks pretty on desktops, tablets, and phones.</p>
 
 <p>See <a href="http://tumblingblocks.net/quilt_block_tutorial/ohioStar.html">http://tumblingblocks.net/quilt_block_tutorial/ohioStar.html</a>.
+	
+<h2>Next Steps</h2>
+
+<ul>
+	<li>Dynamically pull in block name from page name.  (Done, but differently.  Sharing nav bar instead. Without moving this into some sort of database-driven site, there was no point in making the block name dynamic because the instructions aren't dynamic.)</li>
+	<li>More quilt blocks</li>
+	<li>Dashed sewing lines?</li>
+	<li>Work on way to illustrate folded fabric.</li>
+</ul>

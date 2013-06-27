@@ -2,31 +2,34 @@ var block = function(patt) {
 	//private
 	var blockpattern = eval(patt); //where patt is the JSON definition of this block
 	
-	this.drawBlock = function(colorArray, quiltScale, canvasName) { // draw this blocks - accepts parameters
+	this.drawBlock = function(colorArray, quiltScale, canvasName, includeSteps) { // draw this block - accepts parameters
 		
 		totalWidth = blockpattern.blockBasePixHoriz * quiltScale; 
 		totalHeight = blockpattern.blockBasePixVert * quiltScale;
 		var myCanvas = document.getElementById(canvasName).getContext('2d');
 		myCanvas.canvas.height = totalHeight;
 		myCanvas.canvas.width = totalWidth;
+		
+		//loop through each "fabric" (color) and draw all its shapes
 		for (var i = 0; i <= blockpattern.fabrics.length-1; i++){					
 		
 				doDraw(blockpattern.fabrics[i],colorArray[i],quiltScale,myCanvas);	
 				
 		}
-		for (var s = 0; s <= blockpattern.steps.length-1; s++){	
-			var stepCanvas = document.getElementById(blockpattern.steps[s].canvasName).getContext('2d');
-			totalWidth = (blockpattern.steps[s].blockBasePixHoriz) * blockpattern.steps[s].stepsScale; 
-			totalHeight = (blockpattern.steps[s].blockBasePixVert) * blockpattern.steps[s].stepsScale;
+		if (includeSteps){ ///on the index page, we don't include steps
+			for (var s = 0; s <= blockpattern.steps.length-1; s++){	
+				var stepCanvas = document.getElementById(blockpattern.steps[s].canvasName).getContext('2d');
+				totalWidth = (blockpattern.steps[s].blockBasePixHoriz) * blockpattern.steps[s].stepsScale; 
+				totalHeight = (blockpattern.steps[s].blockBasePixVert) * blockpattern.steps[s].stepsScale;
 			
-			stepCanvas.canvas.height = totalHeight;
-			stepCanvas.canvas.width = totalWidth;
+				stepCanvas.canvas.height = totalHeight;
+				stepCanvas.canvas.width = totalWidth;
 			
-			for (var i = 0; i <= blockpattern.steps[s].stepsFabrics.length-1; i++){					
-		
+				for (var i = 0; i <= blockpattern.steps[s].stepsFabrics.length-1; i++){					
 					
 					doDraw(blockpattern.steps[s].stepsFabrics[i],colorArray[i],blockpattern.steps[s].stepsScale,stepCanvas);	
 				
+				}
 			}
 		}
 	};
@@ -41,8 +44,7 @@ var block = function(patt) {
 		}
 		
 		if(jsonFabObj.rect)
-		{
-			
+		{		
 			for (var j = 0; j <= jsonFabObj.rect.length-1; j++)//loop through rectangles
 			{						
 				drawRectangle(jsonFabObj.rect[j].p1 * qScale ,jsonFabObj.rect[j].p2 * qScale,qScale,qScale,whichCanvas);
@@ -135,7 +137,18 @@ $(document).ready(function() {
 		$("#tuteMain").removeClass("offset1 span10 rounded").addClass("span12");
 	}
 	
-	var colorArray = ["#cccc00", "#b1f4fa", "#063a57", "#fa7c70"];
-	var curblock = new block("ohioStar");
-	curblock.drawBlock(colorArray, 60, "ohioStarCanvasMain");
+	 ///load shared nav
+	$("#navbar").load('nav.html', function(){ 
+	
+		$(".nav li a").each(function(){		
+			if (this.href == document.URL){
+				$(this).parent().addClass('active');		
+			}
+		});
+		
+	});
+	
 });
+
+///setting app-wide colors
+var colorArray = ["#cccc00", "#b1f4fa", "#063a57", "#fa7c70"];

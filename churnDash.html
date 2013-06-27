@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ohio Star Simple Tutorial</title>
+<title>Churn Dash Simple Tutorial</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,10 +19,10 @@
 			<div class="row-fluid bigPad bgAqua">
 				
 				<div class="span10 offset1 bgWhite rounded pad40" id="tuteMain">
-					<h1>Ohio Star</h1>
+					<h1>Churn Dash</h1>
 			      	<h3>tutorial</h3>
-					<canvas id="ohioStarCanvasMain" ></canvas>
-					<a name="ohioStar"></a>
+					<canvas id="churnDashCanvasMain" ></canvas>
+					<a name="churnDash"></a>
 				</div>
 				
 			</div>
@@ -37,27 +37,26 @@
 								<tr>
 									<th>fabric</th>
 									<th>quantity</th>
-									<th>dimensions</th>					
+									<th>dimensions</th>	
+									<th>color</th>					
+								</tr>
+								<tr>
+									<td>strips</td>
+									<td>1</td>
+									<td>2.5 x 10</td>
+									<td>both colors</td>						
+								</tr>
+								<tr>
+									<td>points</td>
+									<td>4</td>
+									<td>4.5 x 4.5</td>
+									<td>both colors</td>	
 								</tr>
 								<tr>
 									<td>center</td>
 									<td>1</td>
-									<td>6.5 x 6.5</td>						
-								</tr>
-								<tr>
-									<td>points</td>
-									<td>8</td>
-									<td>3.5 x 3.5</td>	
-								</tr>
-								<tr>
-									<td>background</td>
-									<td>4</td>
-									<td>3.5 x 3.5</td>
-								</tr>
-								<tr>
-									<td>background</td>
-									<td>4</td>
-									<td>6.5 x 3.5</td>
+									<td>2.5 x 2.5</td>
+									<td>just center color</td>
 								</tr>
 							</table>
 						</div>
@@ -72,16 +71,16 @@
 			      	
 					<div class="row-fluid">	
 						<div class="span6 text-center">
-							<canvas id="ohioStarStep1"></canvas>
+							<canvas id="churnDashStep1"></canvas>
 						</div>
 						<div class="span6 text-left pad20">
 							<h3>Make points</h3>
 							<ul>
-								<li>Place a point square on top of a background rectangle, right sides facing.  Align the square with one end of the rectangle.</li>
-								<li>Stitch a diagonal line from the outer corner of the point square in toward the center.</li>
+								<li>Place two different colored point squares on top of each other, right sides facing.  Align the sides and corners.</li>
+								<li>Stitch a diagonal line from one point to another, across the center.</li>
 								<li>Fold the resulting triangle over and press.</li>
 								<li>Trim seam allowance.  You will be trimming of a triangle from both fabrics.</li>
-								<li>Repeat for other corner and other background rectangles.</li>
+								<li>Repeat for three remaining corners.</li>
 							</ul>
 						</div>
 					</div>
@@ -93,15 +92,14 @@
 			      	
 					<div class="row-fluid">	
 						<div class="span6 text-center">
-							<canvas id="ohioStarStep2"></canvas>
+							<canvas id="churnDashStep2"></canvas>
 						</div>
 						<div class="span6 text-left pad20">
-							<h3>Sew block rows</h3>
+							<h3>Make square units from strips</h3>
 							<ul>
-								<li>For row 1, sew a background square to either short side of the rectangle with the points.  Make sure the points point up.</li>
-								<li>For row 2, sew the long side of a background rectangle to each side of the center square. Make sure the points point out.</li>
-								<li>For row 3, sew a background square to either short side of the rectangle with the points.  Make sure the points point down.</li>
-								<li>Press seams open.</li>
+								<li>Stitch the two different colored strips to each other along the 10in. side, right sides facing.</li>
+								<li>Press open</li>
+								<li>Using a rotary cutter and ruler, cut the sewn strip into 2.5in pieces along the 10in side.  You will have 4 pieces</li>
 							</ul>
 						</div>
 					</div>
@@ -113,7 +111,27 @@
 			      	
 					<div class="row-fluid">	
 						<div class="span6 text-center">
-							<canvas id="ohioStarStep3"></canvas>
+							<canvas id="churnDashStep3"></canvas>
+						</div>
+						<div class="span6 text-left pad20">
+							<h3>Assemble rows</h3>
+							<ul>
+								<li>For row 1: Sew a triangle unit to a strip unit to a triangle unit.</li>
+								<li>For row 2: Sew a strip unit to the center square to a strip unit.</li>
+								<li>For row 3: Sew a triangle unit to a strip unit to a triangle unit.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row-fluid bigPad bgWhite">
+				<div class="span12">
+					<h2>Step 4</h2>
+			      	
+					<div class="row-fluid">	
+						<div class="span6 text-center">
+							<canvas id="churnDashStep4"></canvas>
 						</div>
 						<div class="span6 text-left pad20">
 							<h3>Sew rows together</h3>
@@ -134,13 +152,12 @@
 	 </div>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="js/blockTutorial.js"></script>
-<script type="text/javascript" src="json/ohioStar.js"></script>
+<script type="text/javascript" src="json/churnDash.js"></script>
 <script type="text/javascript">
-	var blockName = "ohioStar";
-	var curblock = new block(blockName); ///blockName is set on the block-specific html page
-	curblock.drawBlock(colorArray, 60, blockName + "CanvasMain", true);
+	var blockName = "churnDash";
+	var curblock = new block(blockName); 
+	curblock.drawBlock(colorArray, 50, blockName + "CanvasMain", true);
 </script>
 </body>
 </html>
